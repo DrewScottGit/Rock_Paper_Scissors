@@ -1,0 +1,33 @@
+
+#homeScreen {
+    background-color: purple;
+    display: grid;
+    flex-direction: row;
+    justify-content: center
+}
+
+#title-img{
+    height: 25%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+}
+
+#title {
+    font-size: 100px;
+    color: white;
+    
+}
+
+#title-button{
+    border-radius: 40%;
+    border-color: white;
+    color: black;
+    background-color: beige;
+    font-size: 20px;
+    padding: 15px;
+    margin: 20px;
+    display: grid;
+    height: 10vh;
+    
+}
