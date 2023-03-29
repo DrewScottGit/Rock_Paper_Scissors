@@ -32,3 +32,20 @@
     height: 10vh;
     
 }
+
+#game{
+    background-color: purple;
+    display: grid;
+    flex-direction: row;
+    justify-content: center;
+    height: 95vh;
+}
+.action{
+    border-radius: 100%;
+}
+
+#game-results{
+    display: grid;
+    flex-direction: row;
+
+}
