@@ -7,17 +7,19 @@ const potentialChoices = document.querySelectorAll('.action')
 
 let userChoice 
 let computerChoice
+let result
 
 //we have created all of the buttons and now we need to grab the buttons when the user selects them
 
 //syntax: array.forEach(function(currentValue)
 // for each potential choice -> create a function that takes the potential choices and the user choice -> add a event listener that listens for a click -> on the click a function will -> take the clicked ID and assign it to the user choice -> the user choice view inner HTML is the .action class -> we also want the computer choice to be slected when this function runs
   potentialChoices.forEach(
-    function potentialChoices(potentialChoices,userChoice){
+    function potentialChoices(potentialChoices){
      potentialChoices.addEventListener('click',function(e){
         userChoice = e.target.id
         userChoiceView.innerHTML = userChoice
         createComputerChoiceView()
+        viewTheResults()
     })}
 )
 
@@ -35,6 +37,38 @@ function createComputerChoiceView(){
   if(randomChoice === 3){
     computerChoice = 'Scissors'
   }
-  //console.log(computerChoice)
+
   computerChoiceView.innerHTML = computerChoice
+}
+
+function viewTheResults(){
+
+  if(computerChoice === 'Rock' && userChoice === 'Rock'){
+    result = 'Draw'
+  }
+  if(computerChoice === 'Rock' && userChoice === 'Paper'){
+    result = 'You Win!'
+  }
+  if(computerChoice === 'Rock' && userChoice === 'Scissors'){
+    result = 'You lose!'
+  }
+  if(computerChoice === 'Paper' && userChoice === 'Rock'){
+    result = 'You Lose!'
+  }
+  if(computerChoice === 'Paper' && userChoice === 'Paper'){
+    result = 'Draw!'
+  }
+  if(computerChoice === 'Paper' && userChoice === 'Scissors'){
+    result = 'You Win!'
+  }
+  if(computerChoice === 'Scissors' && userChoice === 'Rock'){
+    result = 'You Win!'
+  }
+  if(computerChoice === 'Scissors' && userChoice === 'Paper'){
+    result = 'You Lose!'
+  }
+  if(computerChoice === 'Scissors' && userChoice === 'Scissors'){
+    result = 'Draw!'
+  }
+  viewResult.innerHTML = result
 }
